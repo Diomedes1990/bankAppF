@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Productos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="height: 2000px;">
+
+    
+<!-- Item Labels -->
+<ion-item>
+  <ion-label color="primary" >Cuentas (2)</ion-label>
+</ion-item>
+  <ion-list>
+    <ion-item button class="itemBtns" *ngFor="let account of bankservice.accounts" (click)="DetailsCuentas(account)">
+      <ion-label text-wrap>
+        <h3>{{ account.alias }}</h3>
+        <h3> RD$ {{ account.availableAmount }}</h3>
+        <h3>Balance Disponible</h3>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <!-- Item Labels -->
+<ion-item>
+  <ion-label color="primary">Tarjetas (2)</ion-label>
+</ion-item>
+
+<!-- Listade tarjetas -->
+<ion-list>
+  <ion-item button *ngFor="let card of bankservice.creditCards" (click)="DetailsCards(card)">
+    <ion-label text-wrap>
+      <h3>{{ card.alias }}</h3>
+      <h3>{{ card.number }}</h3>
+      <h3>{{ card.avaliableAmountRD }}</h3>
+      <h3>{{ card.avaliableAmountUS }}</h3>
+      <h3>{{ card.isInternational }}</h3>
+      <h3>{{ card.productType }}</h3>
+    </ion-label>
+  </ion-item>
+</ion-list>
+
+
+</ion-content>
+
+
+<!-- <ion-tabs slot="bottom ">
+  <ion-tab-bar>
+    <ion-tab-button tab="tab1">
+      <ion-icon name="sunny"></ion-icon>
+      <ion-label>Mis Productos</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="tab2">
+      <ion-icon name="moon"></ion-icon>
+      <ion-label>Transacciones</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="tab3">
+      <ion-icon name="moon"></ion-icon>
+      <ion-label>Ofertas</ion-label>
+    </ion-tab-button>
+
+    
+    <ion-tab-button tab="tab4">
+      <ion-icon name="moon"></ion-icon>
+      <ion-label>Configuracion</ion-label>
+    </ion-tab-button>
+
+  </ion-tab-bar>
+</ion-tabs> -->

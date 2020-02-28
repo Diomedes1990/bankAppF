@@ -1,0 +1,35 @@
+<form #form="ngForm" (submit)="onSubmit(form)" autocomplete="off">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>BANCO BHDLEON</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content style="height: 800px;">
+    <!-- Inputs with labels -->
+    <ion-item>
+      <ion-label>Nombre:</ion-label>
+      <!-- Input with clear button when there is a value -->
+      <ion-input name="userId" ngModel value="{{userId}}"></ion-input>
+    </ion-item>
+
+    <!-- Inputs with labels -->
+    <ion-item>
+      <ion-label>Contrasenas:</ion-label>
+      <!-- Input with clear button when there is a value -->
+      <ion-input
+        name="password"
+        type="password"
+        placeholder="Password"
+        ngModel
+        required
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Recordar mi usuario</ion-label>
+      <ion-toggle slot="end" checked></ion-toggle>
+    </ion-item>
+
+    <ion-button type="submit" expand="block">Entrar</ion-button>
+  </ion-content>
+</form>
